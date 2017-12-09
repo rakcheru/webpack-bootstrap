@@ -14,10 +14,12 @@ var isBootstrapResource = function(resource) {
 
 module.exports = {
 
-  entry : "./src/entry.js",
+  entry : {
+    "my-javascript" : "./src/entry.js"
+  },
 
   output: {
-    filename: "bundle.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -44,6 +46,16 @@ module.exports = {
             name : './image/[name].[ext]'
           }
         }
+      },
+      {
+        test : /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['babel-preset-env']
+          }
+        },
+        exclude: /node_modules/
       }
     ]
   },

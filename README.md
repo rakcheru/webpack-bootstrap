@@ -12,6 +12,8 @@ npm install
 
 This will get all the required modules i.e. webpack, bootstrap, jquery and all the required webpack loaders and plugins.
 
+The module also uses babe compiler to precompile ecma script 2017 code. 
+
 Now bundle the source files using following command
 
 ```
